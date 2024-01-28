@@ -14,8 +14,6 @@ from [here](https://github.com/Johnnyallen07/Mouse_Keyboard_Action_Recording/rel
 ![35s demo](demo.gif)
 
 # Tips
-When the user downloading the .exe, it might say that the .exe file is suspicious and might be a malware, because I have no proper license. Don't worry, just go ahead and normally install it! (Trust me)
-
-BTW, the reference or the thought of the project is derived from atbswp: https://github.com/RMPR/atbswp; and the UI image is drawn by my friend: Andy. Thanks for the contribution to this project!
-
-If any problem emerges, please contact me ASAP or the email: johnnyallenyxc@gmail.com 
+-When the user downloading the .exe, it might say that the .exe file is suspicious and might be a malware, because I have no proper license. Don't worry, just go ahead and normally install it! (Trust me)
+-BTW, the reference or the thought of the project is derived from atbswp: https://github.com/RMPR/atbswp; and the UI image is drawn by my friend: Andy. Thanks for the contribution to this project!
+-If any problem emerges, please contact me ASAP or the email: johnnyallenyxc@gmail.com 
