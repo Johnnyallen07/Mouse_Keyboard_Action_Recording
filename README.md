@@ -4,7 +4,6 @@
 Allows users to record their mouse and keyboard actions and reproduce them identically as many times as they wants.
 
 # Hotkey List
-
 Users can check hotkey list here or in help UI:
 -esc: Stop recording (Notice that this is the only to stop recording in order to add accuracy of the action, and users can change this hotkey in settings list)
 -enter: Playback (Again, users can change this hotkey in settings list)
