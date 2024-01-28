@@ -35,5 +35,4 @@ except:
         "Playback Hotkey": 'enter',
         "Recording Timer": 3,
         "Force Quit": False,
-
     }

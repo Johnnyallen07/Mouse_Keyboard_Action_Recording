@@ -79,14 +79,16 @@ class RecordCtrl:
         record_button.Enable(False)
         record_button.SetBitmap(wx.Bitmap(os.path.join(self.path, "img", "pause.png"),
                                           wx.BITMAP_TYPE_ANY))
-        self.parent.Refresh()
+
         self.parent.Update()
+        self.parent.EnableCloseButton(False)
+
         events = []
         hotkey = settings.CONFIG.get('DEFAULT', 'Recording Hotkey')
 
         position = pyautogui.position()
-        mouse.hook(events.append)
         keyboard.hook(events.append)
+        mouse.hook(events.append)
         keyboard.wait(hotkey)
         mouse.unhook(events.append)
         keyboard.unhook(events.append)
@@ -98,6 +100,7 @@ class RecordCtrl:
         self.parent.Refresh()
         self.parent.Update()
         record_button.Enable(True)
+        self.parent.EnableCloseButton(True)
 
     def recording_timer(event):
         """Set the recording timer."""
@@ -117,8 +120,8 @@ class RecordCtrl:
 
 
 class PlayCtrl:
-
     def play_event(self, event):
+
         self.position, self.events = RecordLoader.load_file()
         play_list = self.sequential()
         infinite = settings.CONFIG.getboolean('DEFAULT', 'Infinite Playback')

@@ -44,10 +44,6 @@ class MainDialog(wx.Dialog, wx.MiniFrame):
             self.path = sys._MEIPASS
         else:
             self.path = Path(__file__).parent.absolute()
-        on_top = wx.DEFAULT_DIALOG_STYLE
-        on_top = on_top if not settings.CONFIG.getboolean('DEFAULT', 'Always On Top') \
-            else on_top | wx.STAY_ON_TOP
-        kwds["style"] = kwds.get("style", 0) | on_top
         wx.Dialog.__init__(self, *args, **kwds)
         self.panel = wx.Panel(self)
         self.icon = wx.Icon(os.path.join(self.path, "img", "icon.png"))
@@ -55,8 +51,6 @@ class MainDialog(wx.Dialog, wx.MiniFrame):
         self.taskbar = TaskBarIcon(self)
         self.taskbar.SetIcon(self.icon, "johnny")
 
-        # locale = self.__load_locale()
-        # self.app_text, self.settings_text = locale[:7], locale[7:]
         self.file_open_button = wx.BitmapButton(self,
                                                 wx.ID_ANY,
                                                 wx.Bitmap(os.path.join(self.path, "img", "file-upload.png"),
@@ -76,8 +70,7 @@ class MainDialog(wx.Dialog, wx.MiniFrame):
                                                  wx.ID_ANY,
                                                  wx.Bitmap(os.path.join(self.path, "img", "play-circle.png"),
                                                            wx.BITMAP_TYPE_ANY))
-        # self.remaining_plays = wx.StaticText(self, label=settings.CONFIG.get("DEFAULT", "Repeat Count"),
-        #                                      style=wx.ALIGN_CENTRE_HORIZONTAL)
+
         self.play_button.SetToolTip(self.app_text[3])
         self.play_button.SetBitmap(wx.Bitmap(os.path.join(self.path, "img", "play-circle.png"),
                                              wx.BITMAP_TYPE_ANY))
@@ -185,7 +178,6 @@ class MainDialog(wx.Dialog, wx.MiniFrame):
         self.sc = control.SettingsCtrl()
 
         self.Bind(wx.EVT_CLOSE, self.on_close_dialog)
-
         # Handle keyboard shortcuts
         self.panel.Bind(wx.EVT_KEY_UP, self.on_key_press)
 
